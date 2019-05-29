@@ -1,0 +1,6 @@
+addon: cocoa
+description: "Markdown syntax highlighting"
+files:
+  - ftdetect/cocoa.vim
+  - syntax/cocoa.vim
+  - indent/cocoa.vim
