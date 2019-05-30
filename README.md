@@ -11,3 +11,11 @@ To install CoCoA-Vim it is recommended to use one of the popular package manager
 ```vim
 Plug 'abacus42/CoCoA-Vim'
 ```
+
+To use snippets you have to install [neosnippet](https://github.com/Shougo/neosnippet.vim) and then set the path to the
+file cocoa.snip in you vim config. For example:
+
+```vim
+" specify the location of cocoa.snip
+let g:neosnippet#snippets_directory='~/.vim/plugged/CoCoA-Vim'
+```
