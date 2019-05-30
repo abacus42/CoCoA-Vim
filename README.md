@@ -17,5 +17,5 @@ file cocoa.snip in you vim config. For example:
 
 ```vim
 " specify the location of cocoa.snip
-let g:neosnippet#snippets_directory='~/.vim/plugged/CoCoA-Vim'
+let g:neosnippet#snippets_directory='~/.vim/plugged/CoCoA-Vim/snippets'
 ```

@@ -39,7 +39,7 @@ function! GetCocoaIndent()
       let indnt = indnt + &shiftwidth
     endif
 
-    if this_codeline =~ '^\s*\(endif\|endwhile\|endfor\|endforeach\|enddefine\);\s*$'
+    if this_codeline =~ '^\s*\(endif\|endwhile\|endfor\|endforeach\|enddefine\|endusing\);\s*$'
       let indnt = indnt - &shiftwidth
     endif
 
