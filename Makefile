@@ -11,6 +11,8 @@ install:
 	cp -v syntax/cocoa.vim ${ADDONS}/syntax/cocoa.vim
 	mkdir -pv ${ADDONS}/indent
 	cp -v indent/cocoa.vim ${ADDONS}/indent/cocoa.vim
+	mkdir -pv ${ADDONS}/after
+	cp -v after/ftplugin/cocoa.vim ${ADDONS}/after/ftplugin/cocoa.vim
 	mkdir -pv ${REGISTRY}
 	cp -v registry/cocoa.yaml ${REGISTRY}/cocoa.yaml
 

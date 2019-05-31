@@ -4,3 +4,4 @@ files:
   - ftdetect/cocoa.vim
   - syntax/cocoa.vim
   - indent/cocoa.vim
+  - after/ftplugin/cocoa.vim
