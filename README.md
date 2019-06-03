@@ -23,5 +23,6 @@ let g:neosnippet#snippets_directory='~/.vim/plugged/CoCoA-Vim/snippets'
 
 ### Terminal/REPL support
 
-If you want to execute you CoCoA functions directly in vim you need to compile CoCoA with readline and install
-the plugin [repl.nvim](https://gitlab.com/HiPhish/repl.nvim).
+To execute your CoCoA functions using the terminal included in vim, you need to compile CoCoA with readline and install
+the plugin [repl.nvim](https://gitlab.com/HiPhish/repl.nvim). Remember to set the location of the cocoa5 executable in
+your \$PATH variable.
