@@ -27,7 +27,7 @@ function! GetCocoaIndent()
     let prev_codeline = getline( prev_codeline_num )
     let indnt = indent( prev_codeline_num )
 
-    if prev_codeline =~ '.*\s\(do\|then\|else\)\s*'
+    if prev_codeline =~ '.*\s\(do\|then\|else\)\s*\(--.*\|//.*\)*$'
       let indnt = indnt + &shiftwidth
     endif
 
@@ -35,11 +35,7 @@ function! GetCocoaIndent()
       let indnt = indnt + &shiftwidth
     endif
 
-    if prev_codeline =~ '^\s*alias\s*'
-      let indnt = indnt + &shiftwidth
-    endif
-
-    if this_codeline =~ '^\s*\(endif\|endwhile\|endfor\|endforeach\|enddefine\|endusing\|else\|elif\)'
+    if this_codeline =~ '^\s*\(endif\|endwhile\|endtry\|endfor\|endforeach\|enddefine\|endusing\|else\|elif\)'
       let indnt = indnt - &shiftwidth
     endif
 
