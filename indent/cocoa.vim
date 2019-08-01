@@ -27,15 +27,15 @@ function! GetCocoaIndent()
     let prev_codeline = getline( prev_codeline_num )
     let indnt = indent( prev_codeline_num )
 
-    if prev_codeline =~ '.*\s\(do\|then\|else\)\s*$'
+    if prev_codeline =~ '.*\s\(do\|then\|else\)\s*'
       let indnt = indnt + &shiftwidth
     endif
 
-    if prev_codeline =~ '^\s*define\s.*)\s*$'
+    if prev_codeline =~ '^\s*define\s.*)\s*'
       let indnt = indnt + &shiftwidth
     endif
 
-    if prev_codeline =~ '^\s*alias\s*$'
+    if prev_codeline =~ '^\s*alias\s*'
       let indnt = indnt + &shiftwidth
     endif
 
