@@ -4,6 +4,7 @@ This Plugin provides <s>basic</s> vim support for our favourite computer algebra
 Its features include:
   * syntax highlighting
   * auto indentation
+  * move cursor to matching keyword using %
   * folding
   * snippets for neosnippet
   * execution in a cocoa terminal window
