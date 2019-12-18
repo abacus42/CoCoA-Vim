@@ -18,7 +18,7 @@ alias For
 
 snippet foreach
 alias Foreach
-    foreach ${1} do
+    foreach ${1} in ${2} do
         ${0}
     endforeach;
 
@@ -27,12 +27,6 @@ alias While
     while ${1} do
         ${0}
     endwhile;
-
-snippet using
-alias Using
-    using ${1} do
-        ${0}
-    endusing;
 
 snippet package
 alias Package
