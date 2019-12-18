@@ -6,11 +6,11 @@ Its features include:
   * auto indentation
   * folding
   * snippets for neosnippet
-  * execution in cocoa terminal window
+  * execution in a cocoa terminal window
 
 ## Installation
 
-To install CoCoA-Vim it is recommended to use one of the popular package managers for Vim.
+To install CoCoA-Vim it is recommended to use one of the popular package managers for vim.
 
 ### vim-plug
 
