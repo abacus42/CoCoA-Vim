@@ -1,6 +1,12 @@
 # CoCoA-Vim
 
 This Plugin provides <s>basic</s> vim support for our favourite computer algebra system [CoCoA](http://cocoa.dima.unige.it/).
+Its features include:
+  * syntax highlighting
+  * auto indentation
+  * folding
+  * snippets for neosnippet
+  * execution in cocoa terminal window
 
 ## Installation
 
@@ -18,7 +24,7 @@ file cocoa.snip in you vim config. For example:
 
 ```vim
 " specify the location of cocoa.snip
-let g:neosnippet#snippets_directory='~/.vim/plugged/CoCoA-Vim/snippets'
+let g:neosnippet#snippets_directory='~/.config/nvim/plugged/CoCoA-Vim/snippets'
 ```
 
 ### Terminal/REPL support
