@@ -11,7 +11,7 @@ syntax case ignore
 "Keywords
 syn keyword Conditional then elif else else in
 syn keyword Repeat do to
-syn keyword Operator + - * ^ > < >= <= / len isin IsZero Zero One IsOne
+syn keyword Operator + - * ^ > < >= <= / len isin
 syn keyword Exception try uponerror endtry
 syn keyword StorageClass TopLevel ref
 syn keyword Keyword println print
