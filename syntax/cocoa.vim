@@ -52,7 +52,7 @@ syntax match Number "\v<0o\o+>"
 syntax match packageName "\$.*\."
 syntax match packageName "/\<\$.*\>/"
 
-syntax match funcdecl "\v[[:alpha:]_.]+\ze(\s?\()"
+syntax match funcdecl "\v(\h[a-zA-Z0-9_]*)\ze(\s?\()"
 
 "Highlight
 hi def link funcdecl Function
