@@ -33,3 +33,7 @@ alias Package
     package \$${1}
         ${0}
     endpackage;
+
+snippet try
+alias Try
+    try ${1} uponerror ${2} do ${0} endtry;
