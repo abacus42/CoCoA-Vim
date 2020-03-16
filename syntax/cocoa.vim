@@ -14,7 +14,7 @@ syn keyword Repeat do to
 syn keyword Operator + - * ^ > < >= <= / len isin
 syn keyword Exception try uponerror endtry
 syn keyword StorageClass TopLevel ref
-syn keyword Keyword println print
+syn keyword Keyword println print on
 
 syn keyword Keywords package endpackage alias export
 syn keyword Keywords break return
