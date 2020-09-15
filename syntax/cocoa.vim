@@ -10,11 +10,11 @@ syntax case ignore
 
 "Keywords
 syn keyword Conditional then elif else else in
-syn keyword Repeat do to
+syn keyword Repeat do to repeat until
 syn keyword Operator + - * ^ > < >= <= / len isin
 syn keyword Exception try uponerror endtry
 syn keyword StorageClass TopLevel ref
-syn keyword Keyword println print on
+syn keyword Keyword println print on use
 
 syn keyword Keywords package endpackage alias export
 syn keyword Keywords break return
@@ -22,7 +22,7 @@ syn keyword Boolean true false
 syn keyword Operator not and or
 
 syn keyword Debug assert
-syn keyword Include source
+syn keyword Include source SourceRegion
 
 
 " Folding
@@ -41,6 +41,7 @@ syntax region MultiComment start="\v/\*" end="\v\*/"
 syntax match LineComment "//.*"
 syntax match DashComment "--.*$"
 syntax match TodoComment "--TODO.*$"
+syntax match NoteComment "--NOTE.*$"
 
 syntax match Number "\v<\d+>"
 syntax match Number "\v<\d+\.\d+>"
@@ -64,4 +65,5 @@ hi link DashComment Comment
 hi link MultiComment Comment
 hi link LineComment Comment
 hi link TodoComment Todo
+hi link NoteComment Todo
 hi link Number Number
