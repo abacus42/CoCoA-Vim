@@ -44,6 +44,8 @@ syntax match LineComment "//.*"
 syntax match DashComment "--.*$"
 syntax match TodoComment "--TODO.*$"
 syntax match NoteComment "--NOTE.*$"
+syntax match Error "--> ERROR:.*$"
+syntax match Error "--> WHERE:.*$"
 
 syntax match Number "\v<\d+>"
 syntax match Number "\v<\d+\.\d+>"
@@ -69,3 +71,5 @@ hi link LineComment Comment
 hi link TodoComment Todo
 hi link NoteComment Todo
 hi link Number Number
+
+hi link Error Error
