@@ -35,7 +35,9 @@ syn region IfFold matchgroup=Conditional start="\<if\>" end="\<endif\>" transpar
 
 syntax match Assignement ":="
 syntax match EqualityCheck "="
-syntax region Strings start=/\v"/ skip=/\v\\./ end=/\v"/
+" multiline string highlighting disabled due to highlighting errors in cocoa5 output windows
+syntax match Strings /\v".*\v"/
+"syntax region Strings start=/\v"/ skip=/\v\\./ end=/\v"/
 
 syntax region MultiComment start="\v/\*" end="\v\*/"
 syntax match LineComment "//.*"
