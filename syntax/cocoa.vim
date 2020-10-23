@@ -37,7 +37,7 @@ syntax match Assignement ":="
 syntax match EqualityCheck "="
 " multiline string highlighting disabled due to highlighting errors in cocoa5 output windows
 "syntax region Strings start=/\v"/ skip=/\v\\./ end=/\v"/
-syntax match Strings /\v"[^"]*\v"/
+syntax match Strings "\".\{-}\(\\\)\@<!\""
 
 syntax region MultiComment start="\v/\*" end="\v\*/"
 syntax match LineComment "//.*"
