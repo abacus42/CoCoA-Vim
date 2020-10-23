@@ -21,8 +21,8 @@ syn keyword Keywords break return
 syn keyword Boolean true false
 syn keyword Operator not and or
 
-syn keyword Debug assert
 syn keyword Include source SourceRegion
+syn keyword Type STRING ERROR FUNCTION IDEAL INT INTMAP ISTREAM LIST MAT MATRIXROW MODULE MODULEELEM OSTREAM RAT RATFUN RECORD RING RINGELEM RINGHOM STRING TYPE VOID
 
 
 " Folding
@@ -36,8 +36,8 @@ syn region IfFold matchgroup=Conditional start="\<if\>" end="\<endif\>" transpar
 syntax match Assignement ":="
 syntax match EqualityCheck "="
 " multiline string highlighting disabled due to highlighting errors in cocoa5 output windows
-syntax match Strings /\v"[^"]*\v"/
 "syntax region Strings start=/\v"/ skip=/\v\\./ end=/\v"/
+syntax match Strings /\v"[^"]*\v"/
 
 syntax region MultiComment start="\v/\*" end="\v\*/"
 syntax match LineComment "//.*"
@@ -45,6 +45,7 @@ syntax match DashComment "--.*$"
 syntax match TodoComment "--TODO.*$"
 syntax match NoteComment "--NOTE.*$"
 syntax region Error start="--> ERROR:.*$" end="--> *\^*$"
+syntax region Warning start="--> WARNING:.*$" end="--> *\^*$"
 
 syntax match Number "\v<\d+>"
 syntax match Number "\v<\d+\.\d+>"
@@ -59,10 +60,10 @@ syntax match packageName "/\<\$.*\>/"
 syntax match funcdecl "\v(\h[a-zA-Z0-9_]*)\ze(\s?\()"
 
 "Highlight
-hi def link funcdecl Function
-hi def link packageName Identifier
-hi def link Keywords Statement
-hi def link Define Statement
+hi link funcdecl Function
+hi link packageName Identifier
+hi link Keywords Statement
+hi link Define Define
 hi link Strings String
 hi link DashComment Comment
 hi link MultiComment Comment
@@ -70,5 +71,7 @@ hi link LineComment Comment
 hi link TodoComment Todo
 hi link NoteComment Todo
 hi link Number Number
+hi link Boolean Boolean
 
 hi link Error Error
+hi link Warning WarningMsg
