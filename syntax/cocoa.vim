@@ -39,11 +39,12 @@ syntax match EqualityCheck "="
 "syntax region Strings start=/\v"/ skip=/\v\\./ end=/\v"/
 syntax match Strings "\".\{-}\(\\\)\@<!\""
 
-syntax region MultiComment start="\v/\*" end="\v\*/"
-syntax match LineComment "//.*"
-syntax match DashComment "--.*$"
-syntax match TodoComment "--TODO.*$"
-syntax match NoteComment "--NOTE.*$"
+syntax region MultiComment start="\v/\*" end="\v\*/" contains=todo,note
+syntax match LineComment "//.*" contains=todo,note
+syntax match DashComment "--.*$" contains=todo,note
+syntax match todo "TODO" contained
+syntax match note "NOTE" contained
+
 syntax region Error start="--> ERROR:.*$" end="--> *\^*$"
 syntax region Warning start="--> WARNING:.*$" end="--> *\^*$"
 
@@ -68,8 +69,8 @@ hi link Strings String
 hi link DashComment Comment
 hi link MultiComment Comment
 hi link LineComment Comment
-hi link TodoComment Todo
-hi link NoteComment Todo
+hi link Todo Todo
+hi link Note Todo
 hi link Number Number
 hi link Boolean Boolean
 
