@@ -39,7 +39,7 @@ syntax match EqualityCheck "="
 "syntax region Strings start=/\v"/ skip=/\v\\./ end=/\v"/
 syntax match Strings "\".\{-}\(\\\)\@<!\""
 
-syntax region MultiComment start="\v/\*" end="\v\*/" contains=todo,note
+syntax region MultiComment start="\v/\*" end="\v\*/" contains=todo,note fold
 syntax match LineComment "//.*" contains=todo,note
 syntax match DashComment "--.*$" contains=todo,note
 syntax match todo "TODO" contained
