@@ -6,34 +6,40 @@ if exists("b:current_syntax")
   finish
 endif
 
-syntax case ignore
+syntax case match
 
 "Keywords
-syn keyword Conditional then elif else else in
-syn keyword Repeat do to repeat until
-syn keyword Operator + - * ^ > < >= <= / len isin
-syn keyword Exception try uponerror endtry
+syn keyword Conditional then elif else Then Else Elif
+syn keyword Repeat do to repeat until for endfor Do Repeat Until For EndFor
+syn keyword Operator + - * ^ > < >= <= / len isin type IsIn Type
+syn keyword Exception try uponerror endtry Try UponError EndTry
 syn keyword StorageClass TopLevel ref
-syn keyword Keyword println print on use
+syn keyword Keyword println print on use PrintLn Print On Use
 
-syn keyword Keywords package endpackage alias export
-syn keyword Keywords break return
-syn keyword Boolean true false
-syn keyword Operator not and or
+syn keyword Keywords package endpackage alias export Package EndPackage Alias Export
+syn keyword Keywords break return Break Return
+syn keyword Boolean true false True False
+syn keyword Operator not and or Not And Or
 
-syn keyword Include source SourceRegion
+syn keyword Include source Source SourceRegion
 syn keyword Type STRING ERROR FUNCTION IDEAL INT INTMAP ISTREAM LIST MAT MATRIXROW MODULE MODULEELEM OSTREAM RAT RATFUN RECORD RING RINGELEM RINGHOM STRING TYPE VOID
-
+syn keyword Structure record Record
+syn keyword Debug assert
 
 " Folding
 syn region DefineFold matchgroup=Define start="\<define\>" end="\<enddefine\>" transparent fold
+syn region DefineFold matchgroup=Define start="\<Define\>" end="\<EndDefine\>" transparent fold
 syn region ForFold matchgroup=Repeat start="\<for\>" end="\<endfor\>" transparent fold
+syn region ForFold matchgroup=Repeat start="\<For\>" end="\<EndFor\>" transparent fold
 syn region ForeachFold matchgroup=Repeat start="\<foreach\>" end="\<endforeach\>" transparent fold
+syn region ForeachFold matchgroup=Repeat start="\<Foreach\>" end="\<EndForeach\>" transparent fold
 syn region WhileFold matchgroup=Repeat start="\<while\>" end="\<endwhile\>" transparent fold
+syn region WhileFold matchgroup=Repeat start="\<While\>" end="\<EndWhile\>" transparent fold
 syn region IfFold matchgroup=Conditional start="\<if\>" end="\<endif\>" transparent fold
+syn region IfFold matchgroup=Conditional start="\<If\>" end="\<EndIf\>" transparent fold
 
 
-syntax match Assignement ":="
+syntax match Assignment ":="
 syntax match EqualityCheck "="
 " multiline string highlighting disabled due to highlighting errors in cocoa5 output windows
 "syntax region Strings start=/\v"/ skip=/\v\\./ end=/\v"/
@@ -69,8 +75,8 @@ hi link Strings String
 hi link DashComment Comment
 hi link MultiComment Comment
 hi link LineComment Comment
-hi link Todo Todo
-hi link Note Todo
+hi link todo Todo
+hi link note Todo
 hi link Number Number
 hi link Boolean Boolean
 
