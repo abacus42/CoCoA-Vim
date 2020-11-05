@@ -1,39 +1,55 @@
 snippet define
-alias Define
     define ${1}(${2})
         ${0}
     enddefine;
 
+
+snippet def
+    --Input: $2
+    --Output: ${3}
+    --Note: 
+    define ${1}(${2})
+        ${0}
+    enddefine; --$1
+
 snippet if
-alias If
     if ${1} then
         ${0}
     endif;
 
+snippet ifi
+    if ${1} then ${0} endif;
+
+snippet ife
+    if ${1} then
+        ${2}
+    else
+        ${3}
+    endif;
+
 snippet for
-alias For
     for ${1}:=${2} to ${3} do
         ${0}
     endfor;
 
 snippet foreach
-alias Foreach
     foreach ${1} in ${2} do
         ${0}
     endforeach;
 
 snippet while
-alias While
     while ${1} do
         ${0}
     endwhile;
 
 snippet package
-alias Package
     package \$${1}
         ${0}
     endpackage;
 
 snippet try
-alias Try
     try ${1} uponerror ${2} do ${0} endtry;
+
+snippet func
+    func(${1}) ${2} endfunc;
+
