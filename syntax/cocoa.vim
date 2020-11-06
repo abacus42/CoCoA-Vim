@@ -68,7 +68,8 @@ syntax match funcdecl "\v(\h[a-zA-Z0-9_]*)\ze(\s?\()"
 
 syntax region ManualDescr start="^--============( .* )=============--$" end="^--============( end .* )=============--$" contains=ManualExample
 syntax region ManualExample start="^------<  example  >------$" end="------< end example >------" contains=ALL keepend
-syntax match ManualQM "^\s*?.*$"
+syntax match ManualQMline "^\s*?\+.*$" contains=ManualQM
+syntax match ManualQM "?"
 
 "fancy highlighting of startup banner!
 syntax region CocoaBanner start="^   ______      ______      ___         ______$" end="^`____/`____/`____/`____/_/  |_|    /_____/$" contains=CocoaBannerMinus,CocoaBanner5 keepend
@@ -100,7 +101,7 @@ hi link Error Error
 hi link Warning WarningMsg
 
 hi link ManualDescr Comment
-hi link ManualQM Comment
+hi link ManualQM Keyword
 
 hi def CocoaBanner term=bold gui=bold guifg=#c31a18
 hi def CocoaBannerMinus gui=bold guifg=#0087f3
