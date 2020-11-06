@@ -11,10 +11,10 @@ syntax case match
 "Keywords
 syn keyword Conditional then elif else Then Else Elif
 syn keyword Repeat do to repeat until for endfor Do Repeat Until For EndFor
-syn keyword Operator + - * ^ > < >= <= / len isin type IsIn Type
+syn keyword Operator + - * ^ > < >= <= / len isin type IsIn Type in In
 syn keyword Exception try uponerror endtry Try UponError EndTry
 syn keyword StorageClass TopLevel ref
-syn keyword Keyword println print on use PrintLn Print On Use
+syn keyword Keyword println print on use PrintLn Print On Use describe Describe
 
 syn keyword Keywords package endpackage alias export Package EndPackage Alias Export
 syn keyword Keywords break return Break Return
@@ -66,10 +66,12 @@ syntax match packageName "/\<\$.*\>/"
 
 syntax match funcdecl "\v(\h[a-zA-Z0-9_]*)\ze(\s?\()"
 
-syntax region ManualDescr start="^--============( .* )=============--$" end="^--============( end .* )=============--$" contains=ManualExample
+syntax match ringhom "^RingHom(RingWithID([0-9]\+, .*) --> .*))$" contains=ALLBUT,DashComment
+
+syntax region ManualDescr start="^--============( .* )=============--$" end="^--============( end .* )=============--$" contains=ManualExample,ManualQMLine
 syntax region ManualExample start="^------<  example  >------$" end="------< end example >------" contains=ALL keepend
-syntax match ManualQMline "^\s*?\+.*$" contains=ManualQM
-syntax match ManualQM "?"
+syntax match ManualQMline "^[^-/]*?\+.*$" contains=ManualQM,DashComment
+syntax match ManualQM "?" contained
 
 "fancy highlighting of startup banner!
 syntax region CocoaBanner start="^   ______      ______      ___         ______$" end="^`____/`____/`____/`____/_/  |_|    /_____/$" contains=CocoaBannerMinus,CocoaBanner5 keepend
