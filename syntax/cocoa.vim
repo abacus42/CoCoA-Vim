@@ -47,7 +47,7 @@ syntax match Strings "\".\{-}\(\\\)\@<!\""
 
 syntax region MultiComment start="\v/\*" end="\v\*/" contains=todo,note fold
 syntax match LineComment "//.*" contains=todo,note
-syntax match DashComment "--.*$" contains=todo,note
+syntax match DashComment "--.*$" contains=todo,note,ManualExample
 syntax match todo "TODO" contained
 syntax match note "NOTE" contained
 
@@ -66,6 +66,22 @@ syntax match packageName "/\<\$.*\>/"
 
 syntax match funcdecl "\v(\h[a-zA-Z0-9_]*)\ze(\s?\()"
 
+syntax region ManualDescr start="^--============( .* )=============--$" end="^--============( end .* )=============--$" contains=ManualExample
+syntax region ManualExample start="^------<  example  >------$" end="------< end example >------" contains=ALL keepend
+syntax match ManualQM "^\s*?.*$"
+
+"fancy highlighting of startup banner!
+syntax region CocoaBanner start="^   ______      ______      ___         ______$" end="^`____/`____/`____/`____/_/  |_|    /_____/$" contains=CocoaBannerMinus,CocoaBanner5 keepend
+syntax match CocoaBannerMinus       "______\ze/"
+syntax match CocoaBannerMinus "_ \zs/_____/"
+syntax match CocoaBanner5   "  ______$"
+syntax match CocoaBanner5    "/ ____/$"
+syntax match CocoaBanner5   "/___ `$"
+syntax match CocoaBanner5   "___/ /$"
+syntax match CocoaBanner5 "/_____/$"
+syntax match CocoaBannerLibs "^With CoCoALib.*"
+"end="^indent(VersionInfo(), 2); -- for information about this version$"
+
 "Highlight
 hi link funcdecl Function
 hi link packageName Identifier
@@ -82,3 +98,15 @@ hi link Boolean Boolean
 
 hi link Error Error
 hi link Warning WarningMsg
+
+hi link ManualDescr Comment
+hi link ManualQM Comment
+
+hi def CocoaBanner term=bold gui=bold guifg=#c31a18
+hi def CocoaBannerMinus gui=bold guifg=#0087f3
+hi def CocoaBanner5 term=bold gui=bold,italic guifg=#a02c41
+hi def CocoaBannerLibs term=bold gui=bold guifg=#5c4017
+hi link CocoaBanner CocoaBanner
+hi link CocoaBannerMinus CocoaBannerMinus
+hi link CocoaBanner5 CocoaBanner5
+hi link CocoaBannerLibs  Comment
