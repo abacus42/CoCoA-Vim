@@ -17,7 +17,7 @@ syn keyword StorageClass TopLevel ref
 syn keyword Keyword println print on use PrintLn Print On Use describe Describe
 
 syn keyword Keywords package endpackage alias export Package EndPackage Alias Export
-syn keyword Keywords break return Break Return
+syn keyword Keyword break continue return Break Return Continue
 syn keyword Boolean true false True False
 syn keyword Operator not and or Not And Or
 
