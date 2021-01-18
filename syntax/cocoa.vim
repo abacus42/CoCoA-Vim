@@ -13,7 +13,7 @@ syn keyword Conditional then elif else Then Else Elif
 syn keyword Repeat do to repeat until for endfor Do Repeat Until For EndFor
 syn keyword Operator + - * ^ > < >= <= / len isin type IsIn Type in In
 syn keyword Exception try uponerror endtry Try UponError EndTry
-syn keyword StorageClass TopLevel ref
+syn keyword StorageClass TopLevel ref opt
 syn keyword Keyword println print on use PrintLn Print On Use describe Describe
 
 syn keyword Keywords package endpackage alias export Package EndPackage Alias Export
