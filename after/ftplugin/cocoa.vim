@@ -5,8 +5,8 @@ let b:match_words.='\<foreach\>:\<endforeach\>,'
 let b:match_words.='\<while\>:\<endwhile\>,'
 let b:match_words.='\<try\>:\<endtry\>,'
 let b:match_words.='\<package\>:\<endpackage\>,'
-let b:match_words.='\<if\>:\<elif\>:\<else\>:\<endif\>'
-let b:match_words.='\</*\>:\<*/\>'
+let b:match_words.='\<if\>:\<elif\>:\<else\>:\<endif\>,'
+let b:match_words.='\</*\>:\<*/\>,'
 
 " set default location of the plugin
 if exists('g:cocoavim#directory') == 0
