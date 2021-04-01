@@ -43,6 +43,10 @@ syn region PackageFold matchgroup=Keywords start="\<package\>" end="\<endpackage
 syn region PackageFold matchgroup=Keywords start="\<Package\>" end="\<EndPackage\>" transparent fold
 
 
+"
+"highilighting for standard editor
+"
+
 syntax match Assignment ":="
 syntax match EqualityCheck "="
 
@@ -66,11 +70,19 @@ syntax match packageName "\$\<[A-Za-z0-9_/]*\>"
 
 syntax match funcdecl "\v(\h[a-zA-Z0-9_]*)\ze(\s?\()"
 
+" multiline string highlighting disabled due to highlighting errors in cocoa5 output windows
+"syntax region Strings start=/\v"/ skip=/\v\\./ end=/\v"/
+syntax match Strings "\"\([^\\]\|\\.\)\{-}\""
+
+
+"
+"highlighting of interactive cocoa-session:
+"
 syntax match ringhom "^RingHom(RingWithID([0-9]\+, .*) --> .*))$" contains=ALLBUT,DashComment
 
 syntax region ManualDescr start="^--============( .* )=============--$" end="^--============( end .* )=============--$" contains=ManualExample,ManualQMLine
 syntax region ManualExample start="^------<  example  >------$" end="------< end example >------" contains=ALL keepend
-syntax match ManualQMline "^[^-/]*?\+.*$" contains=ManualQM,DashComment
+syntax match ManualQMline "^[^-/\"]*?\+.*$" contains=ManualQM,DashComment
 syntax match ManualQM "?" contained
 
 
@@ -86,11 +98,6 @@ syntax match CocoaBanner5 "/_____/$"
 syntax match CocoaBannerLibs "^With CoCoALib.*"
 "end="^indent(VersionInfo(), 2); -- for information about this version$"
 
-
-" multiline string highlighting disabled due to highlighting errors in cocoa5 output windows
-" defined AFTER QM s.t. strings including '?' get matched as strings!
-"syntax region Strings start=/\v"/ skip=/\v\\./ end=/\v"/
-syntax match Strings "\"\([^\\]\|\\.\)\{-}\""
 
 
 "Highlight
