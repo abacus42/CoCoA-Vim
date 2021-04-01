@@ -10,13 +10,13 @@ syntax case match
 
 "Keywords
 syn keyword Conditional then elif else Then Else Elif
-syn keyword Repeat do to repeat until for endfor Do Repeat Until For EndFor
+syn keyword Repeat do to repeat until Do Repeat Until then Then
 syn keyword Operator + - * ^ > < >= <= / len isin type IsIn Type in In
-syn keyword Exception try uponerror endtry Try UponError EndTry
+syn keyword Exception uponerror UponError
 syn keyword StorageClass TopLevel ref opt
 syn keyword Keyword println print on use PrintLn Print On Use describe Describe
 
-syn keyword Keywords package endpackage alias export Package EndPackage Alias Export
+syn keyword Keywords alias export Alias Export
 syn keyword Keyword break continue return Break Return Continue
 syn keyword Boolean true false True False
 syn keyword Operator not and or Not And Or
@@ -31,22 +31,23 @@ syn region DefineFold matchgroup=Define start="\<define\>" end="\<enddefine\>" t
 syn region DefineFold matchgroup=Define start="\<Define\>" end="\<EndDefine\>" transparent fold
 syn region ForFold matchgroup=Repeat start="\<for\>" end="\<endfor\>" transparent fold
 syn region ForFold matchgroup=Repeat start="\<For\>" end="\<EndFor\>" transparent fold
+syn region TryFold matchgroup=Exception start="\<try\>" end="\<endtry\>" transparent fold
+syn region TryFold matchgroup=Exception start="\<Try\>" end="\<EndTry\>" transparent fold
 syn region ForeachFold matchgroup=Repeat start="\<foreach\>" end="\<endforeach\>" transparent fold
 syn region ForeachFold matchgroup=Repeat start="\<Foreach\>" end="\<EndForeach\>" transparent fold
 syn region WhileFold matchgroup=Repeat start="\<while\>" end="\<endwhile\>" transparent fold
 syn region WhileFold matchgroup=Repeat start="\<While\>" end="\<EndWhile\>" transparent fold
 syn region IfFold matchgroup=Conditional start="\<if\>" end="\<endif\>" transparent fold
 syn region IfFold matchgroup=Conditional start="\<If\>" end="\<EndIf\>" transparent fold
+syn region PackageFold matchgroup=Keywords start="\<package\>" end="\<endpackage\>" transparent fold
+syn region PackageFold matchgroup=Keywords start="\<Package\>" end="\<EndPackage\>" transparent fold
 
 
 syntax match Assignment ":="
 syntax match EqualityCheck "="
-" multiline string highlighting disabled due to highlighting errors in cocoa5 output windows
-"syntax region Strings start=/\v"/ skip=/\v\\./ end=/\v"/
-syntax match Strings "\"\([^\\]\|\\.\)\{-}\""
 
 syntax region MultiComment start="\v/\*" end="\v\*/" contains=todo,note fold
-syntax match LineComment "//.*" contains=todo,note
+syntax match LineComment "//.*$" contains=todo,note
 syntax match DashComment "--.*$" contains=todo,note,ManualExample
 syntax match todo "TODO" contained
 syntax match note "NOTE" contained
@@ -61,8 +62,7 @@ syntax match Number "\v<0x\x+([Pp]-?)?\x+>"
 syntax match Number "\v<0b[01]+>"
 syntax match Number "\v<0o\o+>"
 
-syntax match packageName "\$[A-Za-z0-9/]*\."
-syntax match packageName "/\<\$.*\>/"
+syntax match packageName "\$\<[A-Za-z0-9_/]*\>"
 
 syntax match funcdecl "\v(\h[a-zA-Z0-9_]*)\ze(\s?\()"
 
@@ -72,6 +72,7 @@ syntax region ManualDescr start="^--============( .* )=============--$" end="^--
 syntax region ManualExample start="^------<  example  >------$" end="------< end example >------" contains=ALL keepend
 syntax match ManualQMline "^[^-/]*?\+.*$" contains=ManualQM,DashComment
 syntax match ManualQM "?" contained
+
 
 "fancy highlighting of startup banner!
 syntax region CocoaBanner start="^   ______      ______      ___         ______$" end="^`____/`____/`____/`____/_/  |_|    /_____/$" contains=CocoaBannerMinus,CocoaBanner5 keepend
@@ -84,6 +85,13 @@ syntax match CocoaBanner5   "___/ /$"
 syntax match CocoaBanner5 "/_____/$"
 syntax match CocoaBannerLibs "^With CoCoALib.*"
 "end="^indent(VersionInfo(), 2); -- for information about this version$"
+
+
+" multiline string highlighting disabled due to highlighting errors in cocoa5 output windows
+" defined AFTER QM s.t. strings including '?' get matched as strings!
+"syntax region Strings start=/\v"/ skip=/\v\\./ end=/\v"/
+syntax match Strings "\"\([^\\]\|\\.\)\{-}\""
+
 
 "Highlight
 hi link funcdecl Function
