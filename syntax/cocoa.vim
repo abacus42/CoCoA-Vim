@@ -10,7 +10,7 @@ syntax case match
 
 "Keywords
 syn keyword Conditional then elif else Then Else Elif
-syn keyword Repeat do to repeat until Do Repeat Until then Then
+syn keyword Repeat do to until Do Until then Then
 syn keyword Operator + - * ^ > < >= <= / len isin type IsIn Type in In
 syn keyword Exception uponerror UponError
 syn keyword StorageClass TopLevel ref opt
@@ -37,6 +37,8 @@ syn region ForeachFold matchgroup=Repeat start="\<foreach\>" end="\<endforeach\>
 syn region ForeachFold matchgroup=Repeat start="\<Foreach\>" end="\<EndForeach\>" transparent fold
 syn region WhileFold matchgroup=Repeat start="\<while\>" end="\<endwhile\>" transparent fold
 syn region WhileFold matchgroup=Repeat start="\<While\>" end="\<EndWhile\>" transparent fold
+syn region RepeatFold matchgroup=Repeat start="\<repeat\>" end="\<endrepeat\>" transparent fold
+syn region RepeatFold matchgroup=Repeat start="\<Repeat\>" end="\<EndRepeat\>" transparent fold
 syn region IfFold matchgroup=Conditional start="\<if\>" end="\<endif\>" transparent fold
 syn region IfFold matchgroup=Conditional start="\<If\>" end="\<EndIf\>" transparent fold
 syn region PackageFold matchgroup=Keywords start="\<package\>" end="\<endpackage\>" transparent fold

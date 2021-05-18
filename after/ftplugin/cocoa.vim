@@ -2,6 +2,7 @@
 let b:match_words='\<define\>:\<enddefine\>,'
 let b:match_words.='\<for\>:\<endfor\>,'
 let b:match_words.='\<foreach\>:\<endforeach\>,'
+let b:match_words.='\<repeat\>:\<endrepeat\>,'
 let b:match_words.='\<while\>:\<endwhile\>,'
 let b:match_words.='\<try\>:\<endtry\>,'
 let b:match_words.='\<package\>:\<endpackage\>,'
