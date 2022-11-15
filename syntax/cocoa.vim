@@ -89,19 +89,14 @@ syntax match ManualQM "?" contained
 
 
 "fancy highlighting of startup banner!
-syntax region CocoaBanner start="^   ______      ______      ___         ______$" end="^`____/`____/`____/`____/_/  |_|    /_____/$" contains=CocoaBannerMinus,CocoaBanner5 keepend
+syntax region CocoaBanner start="^   ______      ______      ___         ______$" end="^`____/`____/`____/`____/_/  |_|    /_____/" contains=CocoaBannerMinus,CocoaBanner5 keepend
 syntax match CocoaBannerMinus       "______\ze/"
 syntax match CocoaBannerMinus "_ \zs/_____/"
 syntax match CocoaBanner5   "  ______$"
 syntax match CocoaBanner5    "/ ____/$"
-syntax match CocoaBanner5   "/___ `$"
-syntax match CocoaBanner5   "___/ /$"
-syntax match CocoaBanner5 "/_____/$"
-"support for cocoa 5.4.0 banner
-syntax match CocoaBanner5    "/ ____/$"
-syntax match CocoaBanner5   "/___ `  $"
-syntax match CocoaBanner5   "___/ /  $"
-syntax match CocoaBanner5 "/_____/   $"
+syntax match CocoaBanner5   "/___ `"
+syntax match CocoaBanner5   "___/ /"
+syntax match CocoaBanner5 "/_____/"
 syntax match CocoaBannerLibs "^With CoCoALib.*"
 "end="^indent(VersionInfo(), 2); -- for information about this version$"
 
