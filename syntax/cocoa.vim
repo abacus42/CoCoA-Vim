@@ -97,6 +97,11 @@ syntax match CocoaBanner5    "/ ____/$"
 syntax match CocoaBanner5   "/___ `$"
 syntax match CocoaBanner5   "___/ /$"
 syntax match CocoaBanner5 "/_____/$"
+"support for cocoa 5.4.0 banner
+syntax match CocoaBanner5    "/ ____/$"
+syntax match CocoaBanner5   "/___ `  $"
+syntax match CocoaBanner5   "___/ /  $"
+syntax match CocoaBanner5 "/_____/   $"
 syntax match CocoaBannerLibs "^With CoCoALib.*"
 "end="^indent(VersionInfo(), 2); -- for information about this version$"
 
