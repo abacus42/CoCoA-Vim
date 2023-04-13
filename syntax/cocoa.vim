@@ -91,13 +91,14 @@ syntax match ManualQM "?" contained
 "fancy highlighting of startup banner!
 syntax region CocoaBanner start="^   ______      ______      ___         ______$" end="^`____/`____/`____/`____/_/  |_|    /_____/" contains=CocoaBannerMinus,CocoaBanner5 keepend
 syntax match CocoaBannerMinus       "______\ze/"
-syntax match CocoaBannerMinus "_ \zs/_____/"
+syntax match CocoaBannerMinus "_\zs /_____/"
 syntax match CocoaBanner5   "  ______$"
 syntax match CocoaBanner5    "/ ____/$"
 syntax match CocoaBanner5   "/___ `"
 syntax match CocoaBanner5   "___/ /"
 syntax match CocoaBanner5 "/_____/"
 syntax match CocoaBannerLibs "^With CoCoALib.*"
+syntax match CocoaPackageLoading "^Loading CoCoA packages from directory:.*\n.*"
 "end="^indent(VersionInfo(), 2); -- for information about this version$"
 
 
@@ -122,11 +123,12 @@ hi link Warning WarningMsg
 hi link ManualDescr Comment
 hi link ManualQM Keyword
 
-hi def CocoaBanner term=bold gui=bold guifg=#c31a18
-hi def CocoaBannerMinus gui=bold guifg=#0087f3
-hi def CocoaBanner5 term=bold gui=bold,italic guifg=#a02c41
+hi def CocoaBanner term=bold gui=italic guifg=#c31a18
+hi def CocoaBannerMinus gui=italic guifg=#0087f3
+hi def CocoaBanner5 term=bold gui=bold guifg=#a02c41
 hi def CocoaBannerLibs term=bold gui=bold guifg=#5c4017
 hi link CocoaBanner CocoaBanner
 hi link CocoaBannerMinus CocoaBannerMinus
 hi link CocoaBanner5 CocoaBanner5
-hi link CocoaBannerLibs  Comment
+hi link CocoaBannerLibs Comment
+hi link CocoaPackageLoading Comment
