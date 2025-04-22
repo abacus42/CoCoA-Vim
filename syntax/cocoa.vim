@@ -123,11 +123,11 @@ hi link Warning WarningMsg
 hi link ManualDescr Comment
 hi link ManualQM Keyword
 
-hi def CocoaBanner term=bold gui=italic guifg=#c31a18
+"hi def CocoaBanner term=bold gui=italic guifg=#c31a18
 hi def CocoaBannerMinus gui=italic guifg=#0087f3
 hi def CocoaBanner5 term=bold gui=bold guifg=#a02c41
 hi def CocoaBannerLibs term=bold gui=bold guifg=#5c4017
-hi link CocoaBanner CocoaBanner
+hi link CocoaBanner CocoaBanner5
 hi link CocoaBannerMinus CocoaBannerMinus
 hi link CocoaBanner5 CocoaBanner5
 hi link CocoaBannerLibs Comment
